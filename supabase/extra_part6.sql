@@ -1,0 +1,1 @@
+create or replace function mark_order_paid(p_order uuid, p_provider text, p_ref text) returns void language plpgsql as $$ begin insert into payments(order_id, provider, provider_ref, amount_cents, currency, status) values (p_order, p_provider, p_ref, 0, 'ETB', 'paid') on conflict do nothing; update orders set status='in_review' where id=p_order; end; $$;

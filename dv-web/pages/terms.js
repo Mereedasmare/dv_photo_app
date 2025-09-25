@@ -1,0 +1,1 @@
+export default function T(){return(<main><h1>Terms</h1></main>)}

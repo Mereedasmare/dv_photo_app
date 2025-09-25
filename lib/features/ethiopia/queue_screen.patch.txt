@@ -1,0 +1,18 @@
+
+In QueueScreen, replace local list with Supabase when AppConfig.useSupabaseForQueue is true.
+
+Example integration:
+
+import '../../config/app_config.dart';
+import '../../services/supabase_client.dart';
+import 'supa_order_service.dart';
+
+  void _refresh() async {
+    if (AppConfig.useSupabaseForQueue) {
+      final svc = SupaOrderService(Supa.client);
+      final list = await svc.list();
+      setState(() => _orders = list);
+    } else {
+      setState(() => _orders = LocalOrderService.list());
+    }
+  }

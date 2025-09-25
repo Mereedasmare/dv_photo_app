@@ -1,0 +1,1 @@
+export default function C(){return(<main><h1>Checker</h1><p>Stub—expand from README in earlier step.</p></main>)}

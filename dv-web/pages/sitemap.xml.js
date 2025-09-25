@@ -1,0 +1,1 @@
+export async function getServerSideProps({res}){res.setHeader('Content-Type','application/xml');res.write('<urlset/>');res.end();return{props:{}}}export default function S(){return null}

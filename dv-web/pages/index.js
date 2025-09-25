@@ -1,0 +1,1 @@
+export default function H(){return(<main><h1>DV Web</h1><a href='/checker'>Open Checker</a></main>)}
